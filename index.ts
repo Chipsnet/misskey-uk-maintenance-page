@@ -14,3 +14,7 @@ app.use("/assets", express.static("assets"))
 app.get('*', (req: express.Request, res: express.Response) => {
     res.status(503).sendFile(path.join(__dirname, "html", "index.html"))
 })
+
+app.post('*', (req: express.Request, res: express.Response) => {
+    res.status(503).send("Sorry, misskey.uk under mantainance")
+})
